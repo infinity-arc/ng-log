@@ -1,14 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
+import { CLoggerModule } from './c-log/c-log.module';
 import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+
+    BrowserModule,
+    CLoggerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

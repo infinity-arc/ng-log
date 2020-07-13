@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "api":"nodemon test-server",
+    "start": "ng serve --sourceMap=true --prod=false  --aot=true --hmr=true --liveReload=true",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
