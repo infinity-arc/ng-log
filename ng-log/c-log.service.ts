@@ -1,11 +1,23 @@
+import { Inject } from '@angular/core';
+import { CLogConfigModel, CLogEntry } from './c-log-model';
 import { CLogLevel } from './typings';
+import { CLogPublisherService } from './c-log-publisher.service';
 import { CLogPublisher } from './c-log-publisher';
-import { CLogEntry } from './c-log-model';
+import { HttpClient } from '@angular/common/http';
 
 export class CLogService {
   level;
   logWithDate;
   publishers: CLogPublisher[];
+  constructor(
+    private pubService: CLogPublisherService
+    // @Inject('HTTP_CLIENT') private httpClient: HttpClient
+  ) {
+    // super(httpClient);
+    this.level = 0;
+    this.level = true;
+    this.publishers = Inject(CLogPublisherService).pubService.publishers;
+  }
 
   private shouldLog(level: CLogLevel): boolean {
     console.log('level: ', level);

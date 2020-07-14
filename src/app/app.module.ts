@@ -16,7 +16,7 @@ import { CLogService } from '../../ng-log/c-log.service';
   imports: [
 
     BrowserModule,
-    CLoggerModule.forRoot()
+    CLoggerModule//.forRoot()
   ],
   providers: [
     CLogService

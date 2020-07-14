@@ -19,6 +19,7 @@
     "@angular/forms": "~9.1.11",
     "@angular/platform-browser": "~9.1.11",
     "@angular/platform-browser-dynamic": "~9.1.11",
+    "@angular/platform-server": "^10.0.3",
     "@angular/router": "~9.1.11",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

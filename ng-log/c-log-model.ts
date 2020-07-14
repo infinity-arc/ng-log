@@ -12,7 +12,6 @@ export class CLogConfigModel implements ICLogConfig {
   ) { }
 }
 
-
 export class CLogEntry extends CFormatParams implements ICLogEntry {
   extraInfo: any;
   level: CLogLevel;
@@ -20,18 +19,22 @@ export class CLogEntry extends CFormatParams implements ICLogEntry {
   message: any;
 
   buildLogString(): string {
-    let ret = '';
-
+    let ret = ``;
     if (this.logWithDate) {
       ret = new Date() + ' - ';
     }
-    ret += `Type: ` + CLogLevel[this.level];
-    ret += ` - Message: ` + this.message;
+    ret += `Type: ${CLogLevel[this.level]}` ;
+    ret += ` - Message: ${this.message}`;
     if (this.extraInfo.length) {
-      ret += ` - Extra Info: ` + this.formatParams(this.extraInfo);
+      ret += ` - Extra Info: ${this.formatParams(this.extraInfo)}`;
     }
     (this.level === 1) && console.log('ret-string: ', ret);
-    return ret;
+    // return ret;
 
+    return `
+    ${this.logWithDate && new Date()}
+     - Type: ${CLogLevel[this.level]}
+     ${this.extraInfo.length && ` - Extra Info: ${this.formatParams(this.extraInfo)}`}
+    `;
   }
 }

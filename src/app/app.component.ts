@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Logger } from './logger';
 
 // import { CLogService } from '../../ng-log/c-log.service';
 // import { ServiceTest } from './service-test';
@@ -13,7 +14,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-logger';
-  constructor(private logger: Log) {
+  constructor(private logger: Logger) {
     console.log('st: ', this.logger);
     // console.log(this.logger);
 
