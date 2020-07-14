@@ -9,7 +9,7 @@ export class CLogWebApi extends CLogPublisher {
     // Must call super() from derived classes
     super();
     // Set location
-    this.location = '/api/log';
+    this.location = 'http://localhost:3001/api/log';
   }
 
   // Add log entry to back end data store
@@ -18,8 +18,12 @@ export class CLogWebApi extends CLogPublisher {
     headers = headers.append('content-type', 'application/json');
     // const options = new HttpRequest<ICLogEntry>('POST', this.location, entry, { headers, responseType: 'json' });
 
-    return this.http.post<boolean>(this.location, entry, { headers, responseType: 'json' })
-      .pipe(catchError(this.handleErrors)).pipe(map(response => response.json()));
+    return this.http.post<boolean>(this.location, entry, { headers })
+      .pipe(catchError(this.handleErrors)).pipe(map(response => {
+        console.log('response: ', response);
+        return true;
+      }));
+
   }
 
   // Clear all log entries from local storage
