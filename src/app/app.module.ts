@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 
-import { CLoggerModule } from './c-log/c-log.module';
+import { CLoggerModule } from 'ng-log';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 

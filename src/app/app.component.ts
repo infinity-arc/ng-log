@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { CLogService } from './c-log/c-log.service';
+import { CLogService } from 'ng-log';
 
 @Component({
   selector: 'app-root',

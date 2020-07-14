@@ -1,6 +1,7 @@
 {
   "name": "test-logger",
   "version": "0.0.0",
+
   "scripts": {
     "ng": "ng",
     "api": "nodemon test-server",
@@ -21,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
     "body-parser": "^1.19.0",
+    "ng-log": "file:ng-log",
     "cors": "^2.8.5",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

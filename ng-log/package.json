@@ -1,0 +1,29 @@
+{
+  "name": "ng-log",
+  "version": "0.4.1-alpha-1",
+  "description": "angular logger tool",
+  "main": "./c-log-module.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/c-log"
+  },
+  "keywords": [
+    "c-log"
+  ],
+  "author": {
+    "name": "Cliff Crerar",
+    "email": "info@infinityarc.net"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "@angular/common": "^10.0.3",
+    "@angular/core": "^10.0.3",
+    "@angular/platform-browser": "^10.0.3"
+  }
+}
