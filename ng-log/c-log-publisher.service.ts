@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+
 import { CLogConsole } from './c-log-console';
 import { CLogLocalStorage } from './c-log-localstorage';
 import { CLogWebApi } from './c-log-webapi'
@@ -9,7 +9,6 @@ import { catchError, map } from 'rxjs/operators';
 import { ILogPublisherConfig } from './typings/index';
 const PUBLISHERS_FILE = '/src/app/assets/default-config.json';
 
-@Injectable()
 export class CLogPublisherService {
   publishers: CLogPublisher[] = [];
   constructor(private http: HttpClient) {

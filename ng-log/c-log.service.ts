@@ -1,20 +1,11 @@
-import { Injectable, Inject } from '@angular/core';
-import { CLogConfigModel, CLogEntry } from './c-log-model';
 import { CLogLevel } from './typings';
-import { CLogPublisherService } from './c-log-publisher.service';
 import { CLogPublisher } from './c-log-publisher';
+import { CLogEntry } from './c-log-model';
 
-@Injectable()
-export class CLogService extends CLogConfigModel {
-
+export class CLogService {
+  level;
+  logWithDate;
   publishers: CLogPublisher[];
-  constructor(
-    @Inject('CLOG_CONFIG') private _CLogConfig: CLogConfigModel,
-    private pubService: CLogPublisherService
-  ) {
-    super(_CLogConfig.level, _CLogConfig.logWithDate);
-    this.publishers = pubService.publishers;
-  }
 
   private shouldLog(level: CLogLevel): boolean {
     console.log('level: ', level);
@@ -58,7 +49,7 @@ export class CLogService extends CLogConfigModel {
       entry.level = level;
       entry.extraInfo = params;
       entry.logWithDate = this.logWithDate;
-      this.publishers.forEach(logger => logger.log(entry).subscribe(response => console.log(response)))
+      this.publishers.forEach(logger => logger.log(entry).subscribe(response => console.log(response)));
     }
   }
 }

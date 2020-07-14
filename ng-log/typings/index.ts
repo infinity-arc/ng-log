@@ -4,13 +4,6 @@ import { CLogEntry } from '../c-log-model';
 /**
  * @description c-log types
  */
-// export declare namespace CLoggerNameSpace {
-// declare namespace CLogger {
-
-// const CLogLevel: CLogLevel;
-// const ICLogEntry: ICLogEntry;
-// export { ICLogConfig, CLogLevel, ICLogEntry }
-// }
 
 export interface ICLogConfig {
   level: CLogLevel;
@@ -37,7 +30,6 @@ export interface ILogPublisherConfig {
   loggerLocation: string;
   isActive: boolean;
 }
-
 
 export interface ILocalStorage {
   getItem(key: string): any;
